@@ -137,3 +137,13 @@ function booWho(bool) {
 }
 //var booWho = (bool) => typeof bool === "boolean";
 //if the given bool is boolean, return true//if not, return false
+
+//Title Case
+var titleCase = (str) =>
+   str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+//map allows you to call a function for every element inside an array //it's like using a for loop
+//only, in this case, use map to cycle through each element of the array
