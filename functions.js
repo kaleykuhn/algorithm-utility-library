@@ -147,3 +147,48 @@ var titleCase = (str) =>
       .join(" ");
 //map allows you to call a function for every element inside an array //it's like using a for loop
 //only, in this case, use map to cycle through each element of the array
+
+//frankenarrays([1, 2, 3], [4, 5, 6], 1);
+//Slice and Splice
+// create a copy of the second array using .slice so that the original is not mutated and leave slice () empty so that it will slice out entire array
+//then copy.slice first param is n where to start changing array which is 1 index in this case
+//second param is number of elements to remove which is zero
+// arr ...1 spread operator copies contents of arr1 into the copy of arr1
+var frankensplice = (arr1, arr2, n) => {
+   var copy = arr2.slice();
+   copy.splice(n, 0, ...arr1);
+   return copy;
+};
+
+//Falsy Bouncer
+//remove all falsy values
+//filter is used to create new array with all elemk that pass the test implemented by the function you put inside arr
+//Boolean will check of the values in array and falsy values filtered out
+//function bouncer(arr) {
+//return arr.filter(Boolean); }
+//A1: Boolean
+var bouncer = (arr) => arr.filter(Boolean);
+
+//Where do I Belong
+//A1:
+//R:
+var getIndexToIns = (arr, num) => {
+   //use push() to add num to existin array
+   //push() will add num of last ele of arr
+   // ex [40,60,50]
+   //sort the array from lowest to highest number with sort
+   arr.push(num);
+   arr.sort((a, b) => a - b);
+   // [40,50,60]
+   //return the position or index of num in array using indexOf()function
+   return arr.indexOf(num);
+};
+
+//getIndexToIns([40, 60], 50);
+// Alt functions
+//var getIndexToIns = (arr, num) => {
+//arr.sort((a, b) => a - b);
+//for (var i = 0; i < arr.length; i++) {
+//if (arr[i] >= num) { return i;
+//} }
+//return arr.length; };
