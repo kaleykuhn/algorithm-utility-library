@@ -78,7 +78,7 @@ function largestOfFour(arr) {
 function confirmEnding(str, target) {
    return str.slice(str.length - target.length) === target;
 }
-
+//var =str.length - target.length
 // Repeat A String
 //A1: string
 //A2: number
@@ -192,3 +192,23 @@ var getIndexToIns = (arr, num) => {
 //if (arr[i] >= num) { return i;
 //} }
 //return arr.length; };
+var mutation = (arr) => {
+   var string1 = arr[0].toLowerCase();
+   var string2 = arr[1].toLowerCase();
+   for (var i = 0; i < string2.length; i++) {
+      if (string1.indexOf(string2[i]) < 0) {
+         return false;
+      }
+   }
+   return true;
+};
+//
+function chunkArrayInGroups(arr, size) {
+   var newArr = [];
+
+   while (arr.length) {
+      newArr.push(arr.splice(0, size));
+   }
+
+   return newArr;
+}
